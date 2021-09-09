@@ -1,0 +1,68 @@
+
+
+<html>
+    <div class="jumbotron jum">
+<body>
+<div class="container">
+
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   
+
+    
+
+        <div class=" navbar">
+            <h3>Phonebook</h3>
+
+       
+                <div class="table-responsive">
+                    <table class="table">
+                      <thead class="backgroung-color">
+                        <tr>
+                          <th scope="col">name</th>
+                          <th scope="col">phone</th>
+                          <th scope="col">email</th>
+                          <th scope="col"></th>
+                          
+                        </tr>
+                    </thead>
+                          <tbody id="tableBody">
+                
+                            <tr *ngFor="let list of phoneBookList">
+                
+                                <td >{{list.name}}</td>
+                                <td>{{list.phone}}</td>
+                                <td>{{list.email}}</td>
+                                <td><button (click)="contactToDelete(list.id)" type="button" class="btn btn-danger">Delete</button></td>
+                
+                            </tr>
+
+                    </tbody>
+                
+                </table>
+                
+                
+
+                
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+
+
+</div>
+<div class="container2">
+    <a routerLink="/phonebook-entry"> <button>add new phonebook</button></a>
+
+</div>
+
+</html>
+
+
+
+        
