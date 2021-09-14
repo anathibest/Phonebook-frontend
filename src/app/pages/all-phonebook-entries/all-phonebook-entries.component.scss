@@ -1,9 +1,11 @@
-.container {
-    background-color: rgb(177, 174, 176);
-}
-
-.container1 {
-    align-items: center;
+.nav{
+position:fixed;
+margin-top: 100%;
+z-index: 3;
 
 }
 
+.card-body{
+border-radius: 7ch;
+    margin: 1em;
+}

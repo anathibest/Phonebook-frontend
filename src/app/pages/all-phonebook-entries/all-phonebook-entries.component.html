@@ -1,67 +1,58 @@
-
-
 <html>
+
+<div class="text-center p-3" style="background-color: rgb(202, 215, 243);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+            <a routerLink="/phonebook-entry" class="fa fa-list"></a>
+            <a routerLink="/" class="fa fa-home"></a>
+
+     </nav>  
+</div>
+
+
     <div class="jumbotron jum">
-<body>
-<div class="container">
-
-    <title>W3.CSS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   
-
+<div class="wrapper">
     
-
-        <div class=" navbar">
-            <h3>Phonebook</h3>
-
-       
-                <div class="table-responsive">
-                    <table class="table">
-                      <thead class="backgroung-color">
-                        <tr>
-                          <th scope="col">name</th>
-                          <th scope="col">phone</th>
-                          <th scope="col">email</th>
-                          <th scope="col"></th>
-                          
-                        </tr>
-                    </thead>
-                          <tbody id="tableBody">
-                
-                            <tr *ngFor="let list of phoneBookList">
-                
-                                <td >{{list.name}}</td>
-                                <td>{{list.phone}}</td>
-                                <td>{{list.email}}</td>
-                                <td><button (click)="contactToDelete(list.id)" type="button" class="btn btn-danger">Delete</button></td>
-                
-                            </tr>
-
-                    </tbody>
-                
-                </table>
-                
-                
-
-                
-            </div>
-        </div>
+    <div class="container2">
+    
     </div>
+        
+            <h3 class="text-center">Phonebook</h3>
 
-    
-</body>
+            <div >
+                <div class="card" style="background-color: rgb(202, 215, 243);">
+                  <div class="card-body" *ngFor="let list of phoneBookList"> 
+                   
+                    <h5 class="card-title"><i class="fa fa-user ">:</i>{{list.name}}</h5>
+                        
+                        
+
+                    <h5 class="card-title"><i class="fa fa-envelope">:</i>{{list.email}}</h5>
 
 
+                    <h5 class="card-title"> <i class="fa fa-phone">: </i> {{list.phone}}</h5>
 
-</div>
-<div class="container2">
-    <a routerLink="/phonebook-entry"> <button>add new phonebook</button></a>
+                    <button type="button" class="fa fa-trash" (click)="contactToDelete(list.id)"></button>
+                    <button type="button" class="fa fa-edit"></button>
+                  </div>
+              
+                  </div>
+                </div>
+            </div>
+              </div>
 
-</div>
-
+              <div>
+                <footer class="bg-light text-center text-lg-start">
+                    <!-- Copyright -->
+                    <div class="text-center p-3" style="background-color: rgb(202, 215, 243);">
+                      © 
+                      <a class="text-dark" href="https://mdbootstrap.com/">Anathi</a>
+                    </div>
+                    <!-- Copyright -->
+                  </footer>
+            </div>
 </html>
+
 
 
 

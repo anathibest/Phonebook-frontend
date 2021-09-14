@@ -9,7 +9,7 @@ export class PhonebookService {
 
 	constructor(private __http: HttpClient) { }
 
-	url = "http://localhost:4000/api/phonebook";
+	url = "http://localhost:5000/api/phonebook";
 
 	addNewPhonebook(phonebook: any){
 		this.__http.post(`${this.url}`, phonebook).subscribe((res: any) => {

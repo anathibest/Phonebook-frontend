@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { PhonebookService } from 'src/app/services/phonebook.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-new-phonebook-entry',
@@ -12,7 +13,8 @@ export class NewPhonebookEntryComponent implements OnInit {
 	refresh$: any;
 	router: any;
 
-	constructor(private __phonebook: PhonebookService) { }
+	phoneBookList:any = [];
+	constructor(private __phonebook: PhonebookService , private __route: Router) { }
 
 	phonebookForm = new FormGroup({
 		name: new FormControl(''),
@@ -20,7 +22,13 @@ export class NewPhonebookEntryComponent implements OnInit {
 		email: new FormControl(''),
 	})
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+
+		this.__phonebook.getPhoneBook().subscribe((res:any)=>{
+			this.phoneBookList = res;
+		});
+
+	}
 
 	submitPhoneBootEntry(){
 		this.__phonebook.addNewPhonebook(this.phonebookForm.value);
@@ -32,6 +40,9 @@ export class NewPhonebookEntryComponent implements OnInit {
                 this.refresh$.next('');
                 this.router.navigate(['/phonebook']);
             });
-	}   
-}
+		}   
+	}
+	route(){
+		this.__route.navigate(['/'])
+	}
 }

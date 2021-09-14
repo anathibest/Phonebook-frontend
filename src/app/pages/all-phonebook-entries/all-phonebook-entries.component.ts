@@ -19,6 +19,7 @@ export class AllPhonebookEntriesComponent implements OnInit {
 
   this._phonebook.getPhoneBook().subscribe((res:any)=>{
       this.phoneBookList = res;
+
   })
   }
 
@@ -27,6 +28,10 @@ export class AllPhonebookEntriesComponent implements OnInit {
     console.log(id);
     this._phonebook.deleteContact(id).subscribe((res)=>{
       console.log(res);
+      this._phonebook.getPhoneBook().subscribe((res:any)=>{
+        this.phoneBookList = res;
+  
+    })
       
     })
   }
