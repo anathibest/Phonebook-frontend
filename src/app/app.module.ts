@@ -13,12 +13,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { NewPhonebookEntryComponent } from './pages/new-phonebook-entry/new-phonebook-entry.component';
 import { AllPhonebookEntriesComponent } from './pages/all-phonebook-entries/all-phonebook-entries.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		NewPhonebookEntryComponent,
-		AllPhonebookEntriesComponent
+		AllPhonebookEntriesComponent,
+  AboutComponent
 	],
 	imports: [
 		BrowserModule,

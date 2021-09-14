@@ -32,6 +32,10 @@ export class NewPhonebookEntryComponent implements OnInit {
 
 	submitPhoneBootEntry(){
 		this.__phonebook.addNewPhonebook(this.phonebookForm.value);
+		this.refresh$.next('');
+		this.router.navigate(['/phonebook']);
+	
+	
 	}
 
 	ondelete(phonebook: PhonebookService): void {
